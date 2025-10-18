@@ -1,0 +1,13 @@
+### GET /quotes
+GET http://localhost:3000/api/quotes
+
+### GET /random-quote
+GET http://localhost:3000/api/random-quote
+
+### POST /quotes
+POST http://localhost:3000/api/add-quote
+Content-Type: application/json
+{
+  "text": "Simplicity is the soul of efficiency.",
+  "author": "Austin Freeman"
+}
