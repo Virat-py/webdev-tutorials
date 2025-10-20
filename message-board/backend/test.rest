@@ -1,0 +1,13 @@
+GET http://127.0.0.1:8080/api/messages
+
+### POST /quotes
+
+POST http://localhost:8080/api/add-message
+Content-Type: application/json
+
+{
+  "user": "Linus",
+  "text": "Fuck Nvidia",
+  "time": "1:21 am"
+
+}
