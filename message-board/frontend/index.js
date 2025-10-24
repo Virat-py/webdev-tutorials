@@ -8,16 +8,8 @@ async function addMessage() {
       alert("Please enter both name and message!");
       return;
     }
-    const dateTime = new Date().toLocaleString([], {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    });
     const url = "http://127.0.0.1:8080/api/add-message";
-    post_data = { user: name, text: text, time: dateTime };
+    post_data = { sender: name, body: text };
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -65,18 +57,18 @@ async function fetchMessages() {
 
       const author = document.createElement("div");
       author.className = "message-author";
-      author.textContent = msg.user;
+      author.textContent = msg.sender;
 
       const time = document.createElement("div");
       time.className = "message-time";
-      time.textContent = msg.time;
+      time.textContent = msg.created_at;
 
       header.appendChild(author);
       header.appendChild(time);
 
       const text = document.createElement("div");
       text.className = "message-text";
-      text.textContent = msg.text;
+      text.textContent = msg.body;
 
       card.appendChild(header);
       card.appendChild(text);
